@@ -41,13 +41,16 @@
         </header>
     
         <main>            
+            
             <section class="hero with-img" id="3">
                 <div class="container">
-                <h1 class="hero-title" >Эффективные решения <br> для вашего бизнеса</h1>
-                <button class="button" type="button" id="4">Заказать услугу</button>                    
+                    <h1 class="hero-title" >Эффективные решения <br> для вашего бизнеса</h1>
+                    <button data-modal-open class="button" type="button" >Заказать услугу</button>
                 </div>
             </section>
+
             
+
             <section class="destination ">
                 <ul class="destination-item container" >
                     <li class="destination-box icon-antenna" id="5">
@@ -109,9 +112,21 @@
                 <div class="container">
                     <h2 class="business-photo-title">Чем мы занимаемся</h2>
                     <ul class="business-photo-item">
-                        <li class="business-photo-img"><img src="./images/main/img1.jpg" alt="фото" width="370"></li>
-                        <li class="business-photo-img"><img src="./images/main/img2.jpg" alt="фото" width="370"></li>
-                        <li class="business-photo-img"><img src="./images/main/img3.jpg" alt="фото" width="370"></li>
+                        <li class="business-photo-img"><img src="./images/main/img1.jpg" alt="фото" width="370">
+                            <div class="business-block">
+                                <p class="bsn-info">Десктопные приложения</p>
+                            </div>
+                        </li>
+                        <li class="business-photo-img"><img src="./images/main/img2.jpg" alt="фото" width="370">
+                            <div class="business-block">
+                                <p class="bsn-info">Мобильные приложения</p>
+                            </div>
+                        </li>
+                        <li class="business-photo-img"><img src="./images/main/img3.jpg" alt="фото" width="370">
+                            <div class="business-block">
+                                <p class="bsn-info">Дизайнерские решения</p>
+                            </div>
+                        </li>
                     </ul>
                 </div>
             </section>
@@ -346,6 +361,20 @@
                 </div>
 
             </section>
+
+            <div data-modal class="backdrop is-hidden">
+                <div class="modal">
+                    <button class="mdl-button" type="button" data-modal-close>
+                        <a href="./index.html">
+                            <img src="./images/close.svg" alt="T">
+                            <svg class="cls-mdl-button-svg">
+                                <use href="./images/close.svg"></use>
+                            </svg>
+                        </a>
+                    </button>
+                    <p>_</p>
+                </div>
+            </div>
         </main>
        
         <footer class="footer">
@@ -405,5 +434,7 @@
                 </div>
             </div>
        </footer>
+       
+    <script src="./js/modal.js"> </script>
     </body>
 </html>
