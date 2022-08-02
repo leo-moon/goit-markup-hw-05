@@ -80,29 +80,31 @@ nl {
     font-size: 26px;
     line-height: 1.19;
     letter-spacing: 0.03em;
+    text-decoration: none;
 }
 
 .logo-web {
-    text-decoration: none;
+    text-decoration: #FFF ;
     color: #2196F3;
+    transition-property: text-decoration;
+    transition: text-decoration 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .logo-studio {
+    text-decoration: #FFF;
     color: #000000;
 }
 
-.logo:hover,
-.logo:focus {
-    line-style: solid;
-    line-color: var(--accent-color);
-    text-decoration: underline;
+.logo-web:hover,
+.logo-web:focus {
+    text-decoration: 2px solid var(--accent-color) underline;
 }
+
 .navigation {
+    top: 32px;
     width: 294px;
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
-    padding: 0;
 }
 
 .nav-link {
@@ -111,16 +113,35 @@ nl {
     line-height: 1.14;
     letter-spacing: 0.02em;
     text-decoration: none;
-    flex-direction: row;
     color: #212121;
+    transition-property: color;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.nav-list:not(:last-child) {
-    margin-right: 50px;
+.nav-list {
+    position: relative;
 }
+
+     .nav-link-list::after,
+.port-nav-link-list::after {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    top:calc(50% + 40px - 4px);
+    width: 100%;
+    height: 4px;
+    background-color: #2196F3;
+    border-radius: 2px;
+}
+
 .nav-link:hover,
 .nav-link:focus {
     color: var(--accent-color);
+}
+
+.nav-mail {
+    position: relative;
 }
 
 .email {
@@ -137,6 +158,8 @@ nl {
     text-decoration: none;
 
     color: #757575;
+    transition-property: color;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .email::before,
@@ -156,12 +179,16 @@ nl {
     height: 12px;
     background-image: url(../images/main/header/envelope.svg);
     fill: #757575;
+    transition-property: background-image;
+    transition: background-image 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .tel::before {
     width: 10px;
     height: 16px;
     background-image: url(../images/main/header/smartphone.svg);
+    transition-property: background-image;
+    transition: background-image 250ms cubic-bezier(0.4, 0, 0.2, 1)
 }
 
 .tel:hover::before,
@@ -192,7 +219,63 @@ nl {
 
 
 /*==================== MAIN ====================*/
-/* =================== HERO ====================*/
+
+
+/* =================== MODAL ====================*/
+
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #212121;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.backdrop.is-hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.backdrop.is-hidden .modal {
+    transform: translate(-50%, -250%);
+    opacity: 0;
+}
+
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 528px;
+    min-height: 581px;
+    transform: translate(-50%, -50%);
+    opacity: 1;
+
+    background-color: #fff;
+    transition-property: transform;
+    transition: transform 2500ms cubic-bezier(0.4, 0, 0.2, 1),
+                  opacity 2500ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mdl-button {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 30px;
+    height: 30px;
+    border: 0;
+    margin: 0;
+    background-color: #fff;
+}
+
+.cls-mdl-button-svg {
+    fill: red;
+}
+
+/* =================== /MODAL ====================*/
+
+/* =================== HERO ======================*/
 .hero {    
     width: 1600px;
     margin-left: auto;
@@ -214,48 +297,6 @@ nl {
         content: "";
         background-repeat: no-repeat;
 }
-
-.backdrop {
-    position: fixed;
-    top: 0; 
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.1);
-}
-
-.backdrop.is-hidden {
-    opacity: 0;
-    pointer-events: none ;
-}
-
-.modal {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-
-    width: 528px;
-    min-height: 581px;
-    
-    background-color: #fff;
-}
-
-.mdl-button {
-    position: absolute;
-    top: 8px;
-    right: 8px;
-    width: 30px;
-    height: 30px;
-    border: 0;
-    margin: 0;
-}
-
-/* .cls-mdl-button-svg {
-    width: 100%;
-    height: 100%;
-    fill: #000000;
-} */
 
 .hero-title {
     font-weight: 900;
@@ -287,6 +328,11 @@ nl {
     text-align: center;
     letter-spacing: 0.06em;
     color: #FFFFFF;
+
+    /* transition-property: background-color;
+    transition-duration: 250ms;*/
+    transition-property: background-color;
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .button:hover,
@@ -327,6 +373,10 @@ nl {
     justify-content: center;
     align-items: center;
     background-color: #F5F4FA;
+    border: none;
+    transition-property: filter, border;
+    transition: filter 250ms cubic-bezier(0.4, 0, 0.2, 1),
+                border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .dest-befor:hover {
@@ -394,7 +444,7 @@ nl {
 .business-block {
     position: absolute;
     width: 100%;
-    height: 100px;
+    height: 70px;
     align-items: center;
     bottom: 0;
     display: flex;
@@ -496,12 +546,16 @@ nl {
 .team-a-icons {
     width: 100%;
     height: 44px;
+    border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: #fff;
     border-color: #FFFFFF;
     fill: #AFB1B8;
+    transition-property: fill;
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1),
+                background-color 250ms cubic-bezier(0.4, 0, 0.2, 1)
 }
 
 .team-a-icons:hover,
@@ -562,6 +616,9 @@ nl {
     border: 1px solid #AFB1B8;
     border-radius: 4px;
     fill: #AFB1B8;
+    transition-property: fill;
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1),
+                border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .clients-link:focus,
@@ -651,11 +708,13 @@ nl {
     background: rgba(255, 255, 255, 0.1);
     fill: #FFFFFF;
     outline: none;
+    transition-property: background-color;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.footer-b-icons:hover,
-.footer-b-icon:focus {
-    background: #2196F3;
+.footer-a-icons:hover,
+.footer-a-icon:focus {
+    background-color: #2196F3;
     outline: none;
 }
 
@@ -712,16 +771,12 @@ nl {
     border: #F5F4FA;
     
     color: #212121;
-}
-/*
-.port-button:last-child {
-    margin-right: auto;
+    transition-property: filter;
+    transition: filter 250ms cubic-bezier(0.4, 0, 0.2, 1),
+        background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+        color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.port-all {
-    margin-left: auto;
-}
-*/
 .port-button:hover,
 .port-button:focus {
     background-color: #2196F3;
@@ -737,12 +792,60 @@ nl {
 }
 
 .port-project {
+    position: relative;
     width:calc((100% - 2*30px)/3);
     background: #FFFFFF;
+    overflow: hidden;
+    transition-property: filter;
+    transition: filter 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.port-overlay-overflow {
+    display: inline-block;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 294px;
+    overflow: hidden;
+}
+
+.port-overlay {
+    display: inline-block;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 63px 24px;
+    background-color: var(--accent-color);
+    opacity: 0.9;
+    /* background: rgba(33, 150, 243, 0.9); */
+    outline: var(--accent-color);
+    transform: translateY(100%);
+    transition-property: transform;
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.port-overlay-text {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.56;
+    letter-spacing: 0.03em;
+
+    color: #FFFFFF;
+
+}
+
+.port-project:hover .port-overlay {
+    transform: translateY(0%);
 }
 
 .port-project:hover {
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    
 }
 
 .port-title-link {

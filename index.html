@@ -18,18 +18,24 @@
     </head>
     <body>
         
-        <header class="main-header">
+        <header class="main-header"> 
             <div class="container box">
                 <div class="logo main-logo">
                     <a href="" class="logo-web" id="1" >Web<span 
                         class="logo-web logo-studio">Studio</span> 
                     </a>
                 </div>
-                <nav>
+                <nav class="nav-main">
                     <ul class="navigation">
-                        <li class="nav-list"><a class="nav-link" href="./index.html">Студия</a></li>
-                        <li class="nav-list"><a class="nav-link" href="./portfolio.html">Портфолио</a></li>
-                        <li class="nav-list"><a class="nav-link" href="">Кoнтакты</a></li>
+                        <li class="nav-list">
+                                <a class="nav-link nav-link-list" href="./index.html">Студия</a>
+                        </li>
+                        <li class="nav-list">
+                            <a class="nav-link" href="./portfolio.html">Портфолио</a>
+                        </li>
+                        <li class="nav-list">
+                            <a class="nav-link" href="">Кoнтакты</a>
+                        </li>
                     </ul>
                 </nav>
             
@@ -40,7 +46,21 @@
             </div>
         </header>
     
-        <main>            
+        <main>
+
+            <div data-modal class="backdrop is-hidden">
+                <div class="modal">
+                    <button class="mdl-button" type="button" data-modal-close>
+                        <a href="./index.html">
+                            <img src="./images/close.svg" alt="X">
+                            <!-- <svg >
+                                <use class="cls-mdl-button-svg" href="./images/close.svg"></use>
+                            </svg> -->
+                        </a>
+                    </button>
+                    <p>_</p>
+                </div>
+            </div>
             
             <section class="hero with-img" id="3">
                 <div class="container">
@@ -48,8 +68,6 @@
                     <button data-modal-open class="button" type="button" >Заказать услугу</button>
                 </div>
             </section>
-
-            
 
             <section class="destination ">
                 <ul class="destination-item container" >
@@ -362,19 +380,6 @@
 
             </section>
 
-            <div data-modal class="backdrop is-hidden">
-                <div class="modal">
-                    <button class="mdl-button" type="button" data-modal-close>
-                        <a href="./index.html">
-                            <img src="./images/close.svg" alt="T">
-                            <svg class="cls-mdl-button-svg">
-                                <use href="./images/close.svg"></use>
-                            </svg>
-                        </a>
-                    </button>
-                    <p>_</p>
-                </div>
-            </div>
         </main>
        
         <footer class="footer">
