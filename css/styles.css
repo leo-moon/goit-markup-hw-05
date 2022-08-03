@@ -240,7 +240,7 @@ nl {
 }
 
 .backdrop.is-hidden .modal {
-    transform: translate(-50%, -250%);
+    transform: translate(-50%, -50%) scale(1.1);
     opacity: 0;
 }
 
@@ -250,7 +250,7 @@ nl {
     left: 50%;
     width: 528px;
     min-height: 581px;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) scale(1);
     opacity: 1;
 
     background-color: #fff;
